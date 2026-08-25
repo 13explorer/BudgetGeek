@@ -39,26 +39,21 @@ const services = [
         </div>
       </div>
 
-      <div class="systems-panel" aria-label="The Budget Geek service overview">
-        <div class="panel-topline">
-          <span>What can we help with?</span>
-          <span class="status"><span></span> Ready</span>
-        </div>
-        <div class="signal-field" aria-hidden="true">
-          <div class="signal-node node-core"><span>TBG</span></div>
-          <div class="signal-node node-a"><span>IT</span></div>
-          <div class="signal-node node-b"><span>AI</span></div>
-          <div class="signal-node node-c"><span>Web</span></div>
-          <div class="connection connection-a"></div>
-          <div class="connection connection-b"></div>
-          <div class="connection connection-c"></div>
-        </div>
-        <div class="panel-metrics">
-          <div><strong>Support</strong><span>People &amp; devices</span></div>
-          <div><strong>Build</strong><span>Servers &amp; networks</span></div>
-          <div><strong>Create</strong><span>AI &amp; websites</span></div>
-        </div>
-      </div>
+      <figure class="hero-image">
+        <img
+          src="/network-hero.jpg"
+          alt="Blue network cables connected to a managed network switch"
+          width="1280"
+          height="853"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <figcaption>
+          <span class="status"><span></span> Connected</span>
+          <strong>Networks that are built to work.</strong>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -152,87 +147,49 @@ const services = [
   .hero .button-secondary:hover { border-color: var(--white); background: var(--white); color: var(--ink); }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-  .systems-panel {
-    padding: 20px;
-    color: #d7e3ef;
+  .hero-image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
     background: rgba(13, 32, 50, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow: 0 28px 70px rgba(11, 23, 39, 0.2);
   }
 
-  .panel-topline {
-    display: flex;
-    padding: 3px 3px 17px;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-  }
-
-  .status { display: flex; align-items: center; gap: 6px; color: #9df3d9; }
-  .status span { width: 7px; height: 7px; background: #57e5b9; border-radius: 50%; box-shadow: 0 0 0 4px rgba(87, 229, 185, 0.1); }
-
-  .signal-field {
-    position: relative;
-    height: 320px;
-    margin: 20px 0;
-    overflow: hidden;
-    background: radial-gradient(circle at center, rgba(18, 100, 227, 0.2), transparent 42%);
-    border-radius: 14px;
-  }
-
-  .signal-field::before {
+  .hero-image::after {
     position: absolute;
-    inset: 0;
-    opacity: 0.28;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px);
-    background-size: 18px 18px;
+    inset: 35% 0 0;
+    background: linear-gradient(to top, rgba(5, 14, 24, 0.96), transparent);
     content: '';
   }
 
-  .signal-node {
-    position: absolute;
-    z-index: 2;
-    display: grid;
-    width: 70px;
-    height: 70px;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: #16273b;
-    border-radius: 50%;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-    font-size: 0.72rem;
-    font-weight: 700;
+  .hero-image img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    object-position: center;
   }
 
-  .node-core { top: 50%; left: 50%; width: 92px; height: 92px; color: var(--ink); background: var(--cyan); transform: translate(-50%, -50%); font-size: 1rem; }
-  .node-a { top: 25px; left: 40px; }
-  .node-b { top: 38px; right: 30px; }
-  .node-c { right: 58px; bottom: 26px; }
-
-  .connection {
+  .hero-image figcaption {
     position: absolute;
     z-index: 1;
-    top: 50%;
-    left: 50%;
-    width: 155px;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(103, 232, 210, 0.8), rgba(18, 100, 227, 0.2));
-    transform-origin: left center;
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    color: var(--white);
   }
 
-  .connection-a { transform: rotate(216deg); }
-  .connection-b { transform: rotate(316deg); }
-  .connection-c { transform: rotate(36deg); }
+  .hero-image figcaption strong {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    line-height: 1.2;
+  }
 
-  .panel-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .panel-metrics div { padding: 13px 10px; background: rgba(255, 255, 255, 0.045); border-radius: 9px; }
-  .panel-metrics strong, .panel-metrics span { display: block; }
-  .panel-metrics strong { color: var(--white); font-size: 0.72rem; }
-  .panel-metrics span { margin-top: 3px; color: #92a3b6; font-size: 0.58rem; }
+  .status { display: flex; align-items: center; gap: 7px; color: #9df3d9; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .status span { width: 7px; height: 7px; background: #57e5b9; border-radius: 50%; box-shadow: 0 0 0 4px rgba(87, 229, 185, 0.14); }
 
   .trust-strip { border-block: 1px solid var(--line); }
   .trust-items { display: grid; min-height: 86px; align-items: center; grid-template-columns: repeat(4, 1fr); }
@@ -266,7 +223,8 @@ const services = [
 
   @media (max-width: 960px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .systems-panel { max-width: 600px; }
+    .hero-image { max-width: 700px; }
+    .hero-image img { height: auto; aspect-ratio: 16 / 9; }
     .trust-items, .service-grid { grid-template-columns: repeat(2, 1fr); }
     .trust-items { padding-block: 24px; gap: 16px; }
     .service-card:last-child { grid-column: 1 / -1; }
@@ -282,13 +240,7 @@ const services = [
   @media (max-width: 480px) {
     .hero-actions .button { width: 100%; }
     .trust-items { grid-template-columns: 1fr; }
-    .systems-panel { padding: 14px; }
-    .signal-field { height: 275px; }
-    .node-a { left: 18px; }
-    .node-b { right: 12px; }
-    .node-c { right: 26px; }
-    .panel-metrics { grid-template-columns: 1fr; }
-    .panel-metrics span { font-size: 0.68rem; }
+    .hero-image figcaption { right: 18px; bottom: 18px; left: 18px; }
     .services-preview, .why-preview { padding: 85px 0; }
     .service-number { margin-bottom: 45px; }
   }
