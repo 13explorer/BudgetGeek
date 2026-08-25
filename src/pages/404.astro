@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found | [Company Name]" description="The requested page could not be found.">
+  <section class="not-found">
+    <div class="container">
+      <p class="eyebrow">Error 404</p>
+      <h1>That page is not on this network.</h1>
+      <p>The address may have changed, or the page may no longer exist.</p>
+      <a class="button" href="/">Return home</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found { display: grid; min-height: 65vh; padding: 100px 0; place-items: center; background: var(--surface); }
+  .not-found .container { text-align: center; }
+  .not-found h1 { max-width: 780px; margin-inline: auto; font-size: clamp(2.5rem, 6vw, 4.8rem); }
+  .not-found p:not(.eyebrow) { margin-bottom: 30px; color: var(--slate); font-size: 1.1rem; }
+</style>

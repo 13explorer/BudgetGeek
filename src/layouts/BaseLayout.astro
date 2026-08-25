@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+const canonicalURL = Astro.site ? new URL(currentPath, Astro.site) : undefined;
+const socialImageURL = Astro.site ? new URL('/og.png', Astro.site) : undefined;
+
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/services/', label: 'Services' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b1727" />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {socialImageURL && <meta property="og:image" content={socialImageURL} />}
+    {socialImageURL && <meta property="og:image:alt" content="Technology that works. Managed IT, security, and cloud." />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImageURL && <meta name="twitter:image" content={socialImageURL} />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="[Company Name] home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>[Company Name]</span>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            {navigation.map((item) => (
+              <li>
+                <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <a class="button button-small header-cta" href="/contact/">Talk to an IT expert</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand brand-footer" href="/">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            <span>[Company Name]</span>
+          </a>
+          <p>Practical IT services built around reliability, security, and clear communication.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            {navigation.slice(1).map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+          <p>[Service Area]</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; {new Date().getFullYear()} [Company Name]. All rights reserved.</p>
+        <p>Managed IT &amp; consulting</p>
+      </div>
+    </footer>
+  </body>
+</html>

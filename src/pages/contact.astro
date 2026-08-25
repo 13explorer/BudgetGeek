@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact | [Company Name]"
+  description="Contact [Company Name] to discuss managed IT, cybersecurity, infrastructure, Microsoft 365, backup, or consulting needs."
+>
+  <section class="contact-hero">
+    <div class="container contact-grid">
+      <div class="contact-intro">
+        <p class="eyebrow">Contact</p>
+        <h1>Let’s talk about what your IT needs next.</h1>
+        <p>Share what is getting in the way, what is changing, or where you need a second opinion. We will start with a straightforward conversation.</p>
+      </div>
+
+      <aside class="contact-card" aria-label="Contact details">
+        <p class="card-label">Get in touch</p>
+        <a class="email-link" href="mailto:hello@example.com">hello@example.com</a>
+        <div class="contact-detail">
+          <span>Service area</span>
+          <strong>[Service Area]</strong>
+        </div>
+        <div class="contact-detail">
+          <span>Business hours</span>
+          <strong>[Business Hours]</strong>
+        </div>
+        <p class="placeholder-note">Replace the bracketed details and email address before publishing.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="prepare-section">
+    <div class="container prepare-grid">
+      <div class="section-heading">
+        <p class="eyebrow">A useful first message</p>
+        <h2>A little context goes a long way.</h2>
+        <p>You do not need a perfect technical summary. These details simply help us make the first conversation more useful.</p>
+      </div>
+      <div class="prompt-list">
+        <article><span>01</span><div><h3>What is happening?</h3><p>Describe the issue, project, or concern in your own words.</p></div></article>
+        <article><span>02</span><div><h3>Who is affected?</h3><p>Let us know whether this involves one person, a team, a location, or the whole organization.</p></div></article>
+        <article><span>03</span><div><h3>What matters most?</h3><p>Timing, risk, business impact, and desired outcomes are all helpful context.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-cta">
+    <div class="container contact-cta-inner">
+      <div><p class="eyebrow">Ready when you are</p><h2>Start with an email.</h2></div>
+      <a class="button" href="mailto:hello@example.com">Email hello@example.com</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero { padding: clamp(80px, 11vw, 145px) 0 120px; background: radial-gradient(circle at 75% 15%, rgba(103, 232, 210, 0.14), transparent 26%), var(--surface); }
+  .contact-grid { display: grid; align-items: center; grid-template-columns: 1.15fr 0.85fr; gap: clamp(55px, 10vw, 130px); }
+  .contact-intro > p:last-child { max-width: 660px; color: var(--slate); font-size: 1.18rem; }
+
+  .contact-card { padding: 38px; color: #d5e1ec; background: var(--ink); border-radius: 20px; box-shadow: var(--shadow); }
+  .card-label { margin-bottom: 9px; color: var(--cyan); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .email-link { display: inline-block; margin-bottom: 38px; color: var(--white); font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-decoration-color: var(--blue); text-underline-offset: 7px; }
+  .contact-detail { display: flex; padding: 17px 0; justify-content: space-between; gap: 25px; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+  .contact-detail span { color: #8fa2b5; }
+  .contact-detail strong { color: var(--white); text-align: right; }
+  .placeholder-note { margin: 24px 0 0; color: #8fa2b5; font-size: 0.75rem; }
+
+  .prepare-section { padding: 120px 0; }
+  .prepare-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(55px, 9vw, 120px); }
+  .prompt-list article { display: grid; padding: 27px 0; grid-template-columns: 48px 1fr; gap: 20px; border-top: 1px solid var(--line); }
+  .prompt-list article:last-child { border-bottom: 1px solid var(--line); }
+  .prompt-list article > span { color: var(--blue); font-size: 0.78rem; font-weight: 800; }
+  .prompt-list article p { margin: 0; color: var(--slate); }
+
+  .contact-cta { padding: 95px 0; background: var(--ink); color: var(--white); }
+  .contact-cta-inner { display: flex; align-items: end; justify-content: space-between; gap: 50px; }
+  .contact-cta h2 { margin-bottom: 0; }
+  .contact-cta .eyebrow { color: var(--cyan); }
+  .contact-cta .eyebrow::before { background: var(--cyan); }
+
+  @media (max-width: 800px) {
+    .contact-grid, .prepare-grid { grid-template-columns: 1fr; }
+    .contact-card { max-width: 590px; }
+    .contact-cta-inner { align-items: stretch; flex-direction: column; }
+  }
+
+  @media (max-width: 480px) {
+    .contact-card { padding: 28px 22px; }
+    .contact-detail { flex-direction: column; gap: 2px; }
+    .contact-detail strong { text-align: left; }
+  }
+</style>

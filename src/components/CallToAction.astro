@@ -1,0 +1,56 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+}
+
+const {
+  eyebrow = 'Start a conversation',
+  title = 'Ready for IT that feels less uncertain?',
+  text = 'Tell us what is working, what is not, and where you need a clearer path forward.',
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container cta-panel">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="button" href="mailto:hello@example.com">Email us</a>
+      <a class="text-link" href="/contact/">Contact details <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section { padding: 96px 0; background: var(--surface); }
+
+  .cta-panel {
+    display: grid;
+    padding: clamp(38px, 7vw, 74px);
+    align-items: end;
+    grid-template-columns: 1fr auto;
+    gap: 50px;
+    color: var(--white);
+    background: linear-gradient(125deg, #0b1727 0%, #122a45 100%);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .cta-panel h2 { max-width: 690px; margin-bottom: 16px; }
+  .cta-panel p:not(.eyebrow) { max-width: 620px; margin-bottom: 0; color: #b8c8d8; font-size: 1.08rem; }
+  .cta-panel .eyebrow { color: var(--cyan); }
+  .cta-panel .eyebrow::before { background: var(--cyan); }
+  .cta-actions { display: flex; min-width: 190px; flex-direction: column; align-items: stretch; gap: 18px; text-align: center; }
+  .text-link { color: #d7e3ef; font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+  .text-link:hover { color: var(--white); }
+
+  @media (max-width: 780px) {
+    .cta-panel { grid-template-columns: 1fr; align-items: start; gap: 30px; }
+    .cta-actions { width: 100%; min-width: auto; }
+  }
+</style>

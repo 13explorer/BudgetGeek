@@ -1,0 +1,11 @@
+services:
+  website:
+    build:
+      context: .
+      args:
+        SITE_URL: ${SITE_URL:-}
+    image: msp-site:latest
+    container_name: msp-site
+    restart: unless-stopped
+    ports:
+      - "8082:80"

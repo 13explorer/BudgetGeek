@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Managed IT Services',
+    text: 'Proactive support, maintenance, and day-to-day technology management that keeps your team productive.',
+  },
+  {
+    number: '02',
+    title: 'Cybersecurity',
+    text: 'Practical safeguards for identities, devices, networks, and data—built around the risks your business actually faces.',
+  },
+  {
+    number: '03',
+    title: 'Cloud & Microsoft 365',
+    text: 'Secure, well-governed collaboration and cloud services that work the way your people need them to.',
+  },
+];
+---
+
+<BaseLayout
+  title="Reliable IT Services | [Company Name]"
+  description="Managed IT, cybersecurity, cloud, and infrastructure services for organizations that value reliable technology and straightforward guidance."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Managed IT &amp; consulting</p>
+        <h1>Technology that works. Guidance you can trust.</h1>
+        <p class="hero-lead">
+          We help organizations build, secure, and support dependable IT environments—without unnecessary complexity or vague advice.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/contact/">Start a conversation</a>
+          <a class="button button-secondary" href="/services/">Explore our services</a>
+        </div>
+      </div>
+
+      <div class="systems-panel" aria-label="Illustration of a healthy, monitored IT environment">
+        <div class="panel-topline">
+          <span>Environment overview</span>
+          <span class="status"><span></span> Operational</span>
+        </div>
+        <div class="signal-field" aria-hidden="true">
+          <div class="signal-node node-core"><span>Core</span></div>
+          <div class="signal-node node-a"><span>Cloud</span></div>
+          <div class="signal-node node-b"><span>Users</span></div>
+          <div class="signal-node node-c"><span>Sites</span></div>
+          <div class="connection connection-a"></div>
+          <div class="connection connection-b"></div>
+          <div class="connection connection-c"></div>
+        </div>
+        <div class="panel-metrics">
+          <div><strong>Protected</strong><span>Identities &amp; devices</span></div>
+          <div><strong>Monitored</strong><span>Systems &amp; services</span></div>
+          <div><strong>Supported</strong><span>People &amp; operations</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="Our approach">
+    <div class="container trust-items">
+      <span>Proactive support</span>
+      <span>Security-minded</span>
+      <span>Plain-language guidance</span>
+      <span>Built for your business</span>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Core services</p>
+        <h2>A steady hand for your entire IT environment.</h2>
+        <p>From daily support to long-range planning, we keep technology aligned with the way your organization works.</p>
+      </div>
+      <div class="service-grid">
+        {services.map((service) => (
+          <article class="service-card">
+            <span class="service-number">{service.number}</span>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+            <a href="/services/">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why-preview">
+    <div class="container why-grid">
+      <div>
+        <p class="eyebrow">Why choose us</p>
+        <h2>Practical expertise, applied with care.</h2>
+      </div>
+      <div class="why-list">
+        <article>
+          <span>01</span>
+          <div><h3>Clear before clever</h3><p>We explain your options, the tradeoffs, and the recommended path in language you can use.</p></div>
+        </article>
+        <article>
+          <span>02</span>
+          <div><h3>Security is part of the work</h3><p>Protection is considered in every system, project, and recommendation—not bolted on afterward.</p></div>
+        </article>
+        <article>
+          <span>03</span>
+          <div><h3>Solutions that fit</h3><p>Your technology should match your organization, priorities, and risk—not someone else’s template.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(82px, 11vw, 145px) 0 105px;
+    overflow: hidden;
+    background: radial-gradient(circle at 80% 10%, rgba(103, 232, 210, 0.13), transparent 26%), linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
+  }
+
+  .hero::before {
+    position: absolute;
+    inset: 0;
+    opacity: 0.45;
+    background-image: linear-gradient(rgba(11, 23, 39, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 23, 39, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    content: '';
+    mask-image: linear-gradient(to bottom, black, transparent 72%);
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    gap: clamp(50px, 8vw, 100px);
+  }
+
+  .hero-lead { max-width: 670px; margin-bottom: 34px; color: var(--slate); font-size: clamp(1.08rem, 2vw, 1.28rem); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .systems-panel {
+    padding: 20px;
+    color: #d7e3ef;
+    background: var(--ink);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow: 0 28px 70px rgba(11, 23, 39, 0.2);
+  }
+
+  .panel-topline {
+    display: flex;
+    padding: 3px 3px 17px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .status { display: flex; align-items: center; gap: 6px; color: #9df3d9; }
+  .status span { width: 7px; height: 7px; background: #57e5b9; border-radius: 50%; box-shadow: 0 0 0 4px rgba(87, 229, 185, 0.1); }
+
+  .signal-field {
+    position: relative;
+    height: 320px;
+    margin: 20px 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(18, 100, 227, 0.2), transparent 42%);
+    border-radius: 14px;
+  }
+
+  .signal-field::before {
+    position: absolute;
+    inset: 0;
+    opacity: 0.28;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+    background-size: 18px 18px;
+    content: '';
+  }
+
+  .signal-node {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    width: 70px;
+    height: 70px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #16273b;
+    border-radius: 50%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .node-core { top: 50%; left: 50%; width: 92px; height: 92px; color: var(--ink); background: var(--cyan); transform: translate(-50%, -50%); }
+  .node-a { top: 25px; left: 40px; }
+  .node-b { top: 38px; right: 30px; }
+  .node-c { right: 58px; bottom: 26px; }
+
+  .connection {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 155px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(103, 232, 210, 0.8), rgba(18, 100, 227, 0.2));
+    transform-origin: left center;
+  }
+
+  .connection-a { transform: rotate(216deg); }
+  .connection-b { transform: rotate(316deg); }
+  .connection-c { transform: rotate(36deg); }
+
+  .panel-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .panel-metrics div { padding: 13px 10px; background: rgba(255, 255, 255, 0.045); border-radius: 9px; }
+  .panel-metrics strong, .panel-metrics span { display: block; }
+  .panel-metrics strong { color: var(--white); font-size: 0.72rem; }
+  .panel-metrics span { margin-top: 3px; color: #92a3b6; font-size: 0.58rem; }
+
+  .trust-strip { border-block: 1px solid var(--line); }
+  .trust-items { display: grid; min-height: 86px; align-items: center; grid-template-columns: repeat(4, 1fr); }
+  .trust-items span { display: flex; align-items: center; gap: 10px; color: var(--ink-soft); font-size: 0.9rem; font-weight: 700; }
+  .trust-items span::before { width: 7px; height: 7px; background: var(--cyan-dark); border-radius: 50%; content: ''; }
+
+  .services-preview, .why-preview { padding: 120px 0; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .service-card {
+    min-height: 330px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(11, 23, 39, 0.04);
+  }
+
+  .service-number { display: block; margin-bottom: 70px; color: var(--blue); font-family: var(--font-display); font-size: 0.82rem; font-weight: 800; }
+  .service-card p { color: var(--slate); }
+  .service-card a { display: inline-flex; margin-top: 10px; align-items: center; gap: 8px; color: var(--blue-dark); font-weight: 700; text-decoration: none; }
+
+  .why-preview { color: var(--white); background: var(--ink); }
+  .why-preview .eyebrow { color: var(--cyan); }
+  .why-preview .eyebrow::before { background: var(--cyan); }
+  .why-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(50px, 10vw, 130px); }
+  .why-list article { display: grid; padding: 27px 0; grid-template-columns: 48px 1fr; gap: 20px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+  .why-list article:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+  .why-list article > span { color: var(--cyan); font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; }
+  .why-list p { margin: 0; color: #aebdcb; }
+
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .systems-panel { max-width: 600px; }
+    .trust-items, .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-items { padding-block: 24px; gap: 16px; }
+    .service-card:last-child { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 700px) {
+    .hero { padding-top: 65px; }
+    .why-grid { grid-template-columns: 1fr; gap: 30px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .service-card:last-child { grid-column: auto; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-actions .button { width: 100%; }
+    .trust-items { grid-template-columns: 1fr; }
+    .systems-panel { padding: 14px; }
+    .signal-field { height: 275px; }
+    .node-a { left: 18px; }
+    .node-b { right: 12px; }
+    .node-c { right: 26px; }
+    .panel-metrics { grid-template-columns: 1fr; }
+    .panel-metrics span { font-size: 0.68rem; }
+    .services-preview, .why-preview { padding: 85px 0; }
+    .service-number { margin-bottom: 45px; }
+  }
+</style>

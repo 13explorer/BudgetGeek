@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const principles = [
+  { title: 'Reliability first', text: 'We favor well-understood, maintainable solutions that can be supported long after launch day.' },
+  { title: 'Security by default', text: 'Good security is part of sound IT work. We account for risk in everyday decisions, not just special projects.' },
+  { title: 'Context matters', text: 'The best technical answer depends on your people, priorities, budget, and tolerance for disruption.' },
+  { title: 'Clarity builds trust', text: 'You should understand what we recommend, why it matters, and what it will take to move forward.' },
+];
+---
+
+<BaseLayout
+  title="About | [Company Name]"
+  description="Learn how [Company Name] approaches managed IT and consulting with practical expertise, security-minded planning, and clear communication."
+>
+  <section class="page-hero about-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow">About us</p>
+        <h1>Strong IT should make the business feel steadier.</h1>
+      </div>
+      <p class="page-hero-lead">[Company Name] helps organizations turn technology from a recurring source of uncertainty into a reliable, well-understood foundation.</p>
+    </div>
+  </section>
+
+  <section class="belief-section">
+    <div class="container belief-grid">
+      <p class="statement">We believe IT expertise is most valuable when it leads to better decisions—not more complexity.</p>
+      <div>
+        <p>That means listening before prescribing, designing for the environment you actually have, and documenting the work so knowledge stays with your organization.</p>
+        <p>Whether we are handling an urgent problem, planning a migration, or improving security, the goal is the same: make the next step clear and leave the technology stronger than we found it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Our principles</p>
+        <h2>How we approach the work.</h2>
+      </div>
+      <div class="principles-grid">
+        {principles.map((principle, index) => (
+          <article>
+            <span>0{index + 1}</span>
+            <h3>{principle.title}</h3>
+            <p>{principle.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="container process-grid">
+      <div>
+        <p class="eyebrow">A practical process</p>
+        <h2>Understand. Prioritize. Improve.</h2>
+        <p>We keep the process visible, so there is always a shared understanding of what is happening and what comes next.</p>
+      </div>
+      <ol>
+        <li><span>01</span><div><h3>Understand the environment</h3><p>We learn how your people work, where friction lives, and what the business needs technology to do.</p></div></li>
+        <li><span>02</span><div><h3>Prioritize the right work</h3><p>We separate urgent concerns from important improvements and build a sequence that makes sense.</p></div></li>
+        <li><span>03</span><div><h3>Implement with discipline</h3><p>Changes are planned, communicated, documented, and carried through with attention to continuity.</p></div></li>
+        <li><span>04</span><div><h3>Keep improving</h3><p>Technology and risk change. We revisit the plan and make steady, useful progress over time.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <CallToAction title="Looking for a straightforward IT partner?" />
+</BaseLayout>
+
+<style>
+  .about-hero { background: radial-gradient(circle at 82% 25%, rgba(103, 232, 210, 0.16), transparent 28%), var(--surface); }
+  .belief-section { padding: 115px 0; }
+  .belief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(50px, 10vw, 130px); }
+  .statement { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.03em; }
+  .belief-grid > div { color: var(--slate); font-size: 1.08rem; }
+
+  .principles-section { padding: 110px 0; background: var(--surface); }
+  .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .principles-grid article { padding: 34px; border: 1px solid var(--line); background: var(--white); border-radius: var(--radius); }
+  .principles-grid span { display: block; margin-bottom: 48px; color: var(--blue); font-size: 0.78rem; font-weight: 800; }
+  .principles-grid article p { margin: 0; color: var(--slate); }
+
+  .process-section { padding: 120px 0; color: var(--white); background: var(--ink); }
+  .process-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(60px, 10vw, 140px); }
+  .process-grid > div > p:last-child { color: #aebdcb; }
+  .process-section .eyebrow { color: var(--cyan); }
+  .process-section .eyebrow::before { background: var(--cyan); }
+  .process-grid ol { margin: 0; padding: 0; list-style: none; }
+  .process-grid li { display: grid; padding: 27px 0; grid-template-columns: 48px 1fr; gap: 20px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+  .process-grid li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+  .process-grid li > span { color: var(--cyan); font-size: 0.78rem; font-weight: 800; }
+  .process-grid li p { margin: 0; color: #aebdcb; }
+
+  @media (max-width: 780px) {
+    .belief-grid, .process-grid { grid-template-columns: 1fr; }
+    .principles-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Managed IT Services',
+    summary: 'Consistent day-to-day support and proactive care for the technology your organization depends on.',
+    details: ['Help desk and user support', 'Device and system monitoring', 'Patch and lifecycle planning', 'IT documentation and standards'],
+  },
+  {
+    number: '02',
+    title: 'Network Infrastructure',
+    summary: 'Stable, well-designed connectivity across offices, remote teams, cloud resources, and critical systems.',
+    details: ['Network design and upgrades', 'Wi-Fi planning and optimization', 'Firewall and switching projects', 'Performance troubleshooting'],
+  },
+  {
+    number: '03',
+    title: 'Cybersecurity',
+    summary: 'Layered, practical protection focused on reducing risk without making everyday work unnecessarily difficult.',
+    details: ['Security assessments', 'Identity and access controls', 'Endpoint protection strategy', 'Policies and response planning'],
+  },
+  {
+    number: '04',
+    title: 'Microsoft 365',
+    summary: 'Secure configuration, migration, and ongoing administration for the tools your team uses every day.',
+    details: ['Tenant setup and governance', 'Email and data migrations', 'Teams and SharePoint guidance', 'Identity and license management'],
+  },
+  {
+    number: '05',
+    title: 'Backup & Disaster Recovery',
+    summary: 'Recovery planning that accounts for your data, systems, operating priorities, and acceptable downtime.',
+    details: ['Backup strategy and implementation', 'Recovery testing and documentation', 'Business continuity planning', 'Cloud and local workload protection'],
+  },
+  {
+    number: '06',
+    title: 'IT Projects & Consulting',
+    summary: 'Experienced technical planning and delivery for changes that need to be done carefully and done once.',
+    details: ['Infrastructure projects', 'Cloud and system migrations', 'Technology roadmaps', 'Vendor and solution evaluation'],
+  },
+];
+---
+
+<BaseLayout
+  title="IT Services | [Company Name]"
+  description="Explore managed IT, network infrastructure, cybersecurity, Microsoft 365, backup, disaster recovery, and consulting services."
+>
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h1>IT support for today. A stronger foundation for tomorrow.</h1>
+      </div>
+      <p class="page-hero-lead">We bring support, security, infrastructure, and planning together so technology becomes a dependable part of your operation.</p>
+    </div>
+  </section>
+
+  <section class="service-list-section">
+    <div class="container service-list">
+      {services.map((service) => (
+        <article class="service-row">
+          <span class="service-index">{service.number}</span>
+          <div class="service-copy">
+            <h2>{service.title}</h2>
+            <p>{service.summary}</p>
+          </div>
+          <ul>
+            {service.details.map((detail) => <li>{detail}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="engagement-section">
+    <div class="container engagement-grid">
+      <div class="section-heading">
+        <p class="eyebrow">Flexible engagement</p>
+        <h2>Support that matches the work.</h2>
+        <p>Some organizations need an ongoing IT partner. Others need focused expertise for a project or decision. We start with the need, then shape the right engagement.</p>
+      </div>
+      <div class="engagement-cards">
+        <article><h3>Ongoing partnership</h3><p>Proactive management, responsive support, and a steady technology roadmap.</p></article>
+        <article><h3>Defined projects</h3><p>Clear scope, practical planning, and disciplined implementation from start to finish.</p></article>
+        <article><h3>Advisory support</h3><p>Independent technical guidance when you need clarity before making a decision.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+</BaseLayout>
+
+<style>
+  .service-list-section { padding: 40px 0 120px; }
+  .service-list { border-top: 1px solid var(--line); }
+
+  .service-row {
+    display: grid;
+    padding: 48px 0;
+    grid-template-columns: 70px minmax(260px, 0.9fr) minmax(300px, 1.1fr);
+    gap: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .service-index { padding-top: 8px; color: var(--blue); font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; }
+  .service-row h2 { margin-bottom: 14px; font-size: clamp(1.65rem, 3vw, 2.2rem); }
+  .service-copy p { max-width: 490px; margin-bottom: 0; color: var(--slate); }
+  .service-row ul { display: grid; margin: 0; padding: 0; align-content: start; grid-template-columns: 1fr 1fr; gap: 12px 24px; list-style: none; }
+  .service-row li { position: relative; padding-left: 19px; color: var(--ink-soft); font-size: 0.92rem; }
+  .service-row li::before { position: absolute; top: 0.67em; left: 0; width: 7px; height: 7px; background: var(--cyan-dark); border-radius: 50%; content: ''; }
+
+  .engagement-section { padding: 110px 0; color: var(--white); background: var(--ink); }
+  .engagement-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(50px, 8vw, 110px); }
+  .engagement-section .eyebrow { color: var(--cyan); }
+  .engagement-section .eyebrow::before { background: var(--cyan); }
+  .engagement-section .section-heading p:last-child { color: #aebdcb; }
+  .engagement-cards { display: grid; gap: 12px; }
+  .engagement-cards article { padding: 26px 28px; border: 1px solid rgba(255, 255, 255, 0.11); background: rgba(255, 255, 255, 0.035); border-radius: 14px; }
+  .engagement-cards article p { margin: 0; color: #aebdcb; }
+
+  @media (max-width: 850px) {
+    .service-row { grid-template-columns: 46px 1fr; }
+    .service-row ul { grid-column: 2; }
+    .engagement-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  @media (max-width: 560px) {
+    .service-row { grid-template-columns: 1fr; gap: 10px; }
+    .service-row ul { grid-column: auto; grid-template-columns: 1fr; margin-top: 16px; }
+  }
+</style>
