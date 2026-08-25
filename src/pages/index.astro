@@ -6,57 +6,57 @@ const services = [
   {
     number: '01',
     title: 'Managed IT Services',
-    text: 'Proactive support, maintenance, and day-to-day technology management that keeps your team productive.',
+    text: 'Friendly day-to-day support and proactive care that keep your people working and your systems healthy.',
   },
   {
     number: '02',
-    title: 'Cybersecurity',
-    text: 'Practical safeguards for identities, devices, networks, and data—built around the risks your business actually faces.',
+    title: 'Networks & Repairs',
+    text: 'Better Wi-Fi, smarter network design, and responsive break/fix help when something stops working.',
   },
   {
     number: '03',
-    title: 'Cloud & Microsoft 365',
-    text: 'Secure, well-governed collaboration and cloud services that work the way your people need them to.',
+    title: 'AI & Web Solutions',
+    text: 'Private AI servers, practical automation, and fast business websites—planned, built, and supported.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Reliable IT Services | [Company Name]"
-  description="Managed IT, cybersecurity, cloud, and infrastructure services for organizations that value reliable technology and straightforward guidance."
+  title="Managed IT, AI Infrastructure & Websites | The Budget Geek"
+  description="The Budget Geek provides managed IT, networking, repairs, private AI infrastructure, and website services with straightforward guidance."
 >
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Managed IT &amp; consulting</p>
-        <h1>Technology that works. Guidance you can trust.</h1>
+        <p class="eyebrow">IT that moves your business forward</p>
+        <h1>Less tech stress. More <em>possibility.</em></h1>
         <p class="hero-lead">
-          We help organizations build, secure, and support dependable IT environments—without unnecessary complexity or vague advice.
+          From everyday IT support and rock-solid networks to private AI servers and modern websites, The Budget Geek turns complicated technology into useful solutions.
         </p>
         <div class="hero-actions">
-          <a class="button" href="/contact/">Start a conversation</a>
-          <a class="button button-secondary" href="/services/">Explore our services</a>
+          <a class="button" href="/contact/">Tell us what you need</a>
+          <a class="button button-secondary" href="/services/">See what we do</a>
         </div>
       </div>
 
-      <div class="systems-panel" aria-label="Illustration of a healthy, monitored IT environment">
+      <div class="systems-panel" aria-label="The Budget Geek service overview">
         <div class="panel-topline">
-          <span>Environment overview</span>
-          <span class="status"><span></span> Operational</span>
+          <span>What can we help with?</span>
+          <span class="status"><span></span> Ready</span>
         </div>
         <div class="signal-field" aria-hidden="true">
-          <div class="signal-node node-core"><span>Core</span></div>
-          <div class="signal-node node-a"><span>Cloud</span></div>
-          <div class="signal-node node-b"><span>Users</span></div>
-          <div class="signal-node node-c"><span>Sites</span></div>
+          <div class="signal-node node-core"><span>TBG</span></div>
+          <div class="signal-node node-a"><span>IT</span></div>
+          <div class="signal-node node-b"><span>AI</span></div>
+          <div class="signal-node node-c"><span>Web</span></div>
           <div class="connection connection-a"></div>
           <div class="connection connection-b"></div>
           <div class="connection connection-c"></div>
         </div>
         <div class="panel-metrics">
-          <div><strong>Protected</strong><span>Identities &amp; devices</span></div>
-          <div><strong>Monitored</strong><span>Systems &amp; services</span></div>
-          <div><strong>Supported</strong><span>People &amp; operations</span></div>
+          <div><strong>Support</strong><span>People &amp; devices</span></div>
+          <div><strong>Build</strong><span>Servers &amp; networks</span></div>
+          <div><strong>Create</strong><span>AI &amp; websites</span></div>
         </div>
       </div>
     </div>
@@ -64,19 +64,19 @@ const services = [
 
   <section class="trust-strip" aria-label="Our approach">
     <div class="container trust-items">
-      <span>Proactive support</span>
-      <span>Security-minded</span>
-      <span>Plain-language guidance</span>
-      <span>Built for your business</span>
+      <span>Straight answers</span>
+      <span>Practical solutions</span>
+      <span>Security built in</span>
+      <span>Support that sticks around</span>
     </div>
   </section>
 
   <section class="services-preview">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Core services</p>
-        <h2>A steady hand for your entire IT environment.</h2>
-        <p>From daily support to long-range planning, we keep technology aligned with the way your organization works.</p>
+        <p class="eyebrow">How we can help</p>
+        <h2>Start with what’s getting in the way.</h2>
+        <p>You might need ongoing support, a stubborn problem fixed, or help building something new. We meet you where you are.</p>
       </div>
       <div class="service-grid">
         {services.map((service) => (
@@ -95,20 +95,20 @@ const services = [
     <div class="container why-grid">
       <div>
         <p class="eyebrow">Why choose us</p>
-        <h2>Practical expertise, applied with care.</h2>
+        <h2>Good technology should feel useful—not overwhelming.</h2>
       </div>
       <div class="why-list">
         <article>
           <span>01</span>
-          <div><h3>Clear before clever</h3><p>We explain your options, the tradeoffs, and the recommended path in language you can use.</p></div>
+          <div><h3>Plain language</h3><p>We explain what is happening, what your options are, and what we recommend without hiding behind jargon.</p></div>
         </article>
         <article>
           <span>02</span>
-          <div><h3>Security is part of the work</h3><p>Protection is considered in every system, project, and recommendation—not bolted on afterward.</p></div>
+          <div><h3>Built around your reality</h3><p>Your budget, team, and priorities matter. The right solution is the one that fits your business.</p></div>
         </article>
         <article>
           <span>03</span>
-          <div><h3>Solutions that fit</h3><p>Your technology should match your organization, priorities, and risk—not someone else’s template.</p></div>
+          <div><h3>Here for the whole lifecycle</h3><p>We can plan it, build it, repair it, and keep supporting it after the project is finished.</p></div>
         </article>
       </div>
     </div>
@@ -122,14 +122,15 @@ const services = [
     position: relative;
     padding: clamp(82px, 11vw, 145px) 0 105px;
     overflow: hidden;
-    background: radial-gradient(circle at 80% 10%, rgba(103, 232, 210, 0.13), transparent 26%), linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
+    color: var(--white);
+    background: radial-gradient(circle at 12% 100%, rgba(83, 236, 192, 0.2), transparent 30%), radial-gradient(circle at 82% 14%, rgba(18, 100, 227, 0.38), transparent 26%), #07131f;
   }
 
   .hero::before {
     position: absolute;
     inset: 0;
-    opacity: 0.45;
-    background-image: linear-gradient(rgba(11, 23, 39, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 23, 39, 0.04) 1px, transparent 1px);
+    opacity: 0.5;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
     background-size: 48px 48px;
     content: '';
     mask-image: linear-gradient(to bottom, black, transparent 72%);
@@ -143,13 +144,18 @@ const services = [
     gap: clamp(50px, 8vw, 100px);
   }
 
-  .hero-lead { max-width: 670px; margin-bottom: 34px; color: var(--slate); font-size: clamp(1.08rem, 2vw, 1.28rem); }
+  .hero h1 em { color: var(--cyan); font-style: normal; }
+  .hero .eyebrow { color: var(--cyan); }
+  .hero .eyebrow::before { background: var(--cyan); }
+  .hero-lead { max-width: 670px; margin-bottom: 34px; color: #b7c7d6; font-size: clamp(1.08rem, 2vw, 1.28rem); }
+  .hero .button-secondary { border-color: rgba(255, 255, 255, 0.26); color: var(--white); background: transparent; }
+  .hero .button-secondary:hover { border-color: var(--white); background: var(--white); color: var(--ink); }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
   .systems-panel {
     padding: 20px;
     color: #d7e3ef;
-    background: var(--ink);
+    background: rgba(13, 32, 50, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     box-shadow: 0 28px 70px rgba(11, 23, 39, 0.2);
@@ -202,7 +208,7 @@ const services = [
     font-weight: 700;
   }
 
-  .node-core { top: 50%; left: 50%; width: 92px; height: 92px; color: var(--ink); background: var(--cyan); transform: translate(-50%, -50%); }
+  .node-core { top: 50%; left: 50%; width: 92px; height: 92px; color: var(--ink); background: var(--cyan); transform: translate(-50%, -50%); font-size: 1rem; }
   .node-a { top: 25px; left: 40px; }
   .node-b { top: 38px; right: 30px; }
   .node-c { right: 58px; bottom: 26px; }

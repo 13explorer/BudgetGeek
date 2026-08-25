@@ -3,33 +3,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CallToAction from '../components/CallToAction.astro';
 
 const principles = [
-  { title: 'Reliability first', text: 'We favor well-understood, maintainable solutions that can be supported long after launch day.' },
-  { title: 'Security by default', text: 'Good security is part of sound IT work. We account for risk in everyday decisions, not just special projects.' },
-  { title: 'Context matters', text: 'The best technical answer depends on your people, priorities, budget, and tolerance for disruption.' },
-  { title: 'Clarity builds trust', text: 'You should understand what we recommend, why it matters, and what it will take to move forward.' },
+  { title: 'Make it understandable', text: 'You should know what we recommend, why it matters, and what it will take to move forward.' },
+  { title: 'Build it to last', text: 'We favor secure, maintainable solutions that can be supported long after launch day.' },
+  { title: 'Work with reality', text: 'The best technical answer depends on your people, priorities, budget, and appetite for change.' },
+  { title: 'Stay curious', text: 'Technology keeps changing. We keep learning so new tools—especially AI—can be used thoughtfully.' },
 ];
 ---
 
 <BaseLayout
-  title="About | [Company Name]"
-  description="Learn how [Company Name] approaches managed IT and consulting with practical expertise, security-minded planning, and clear communication."
+  title="About The Budget Geek"
+  description="Learn how The Budget Geek approaches IT support, networks, AI infrastructure, and websites with practical expertise and clear communication."
 >
   <section class="page-hero about-hero">
     <div class="container page-hero-grid">
       <div>
         <p class="eyebrow">About us</p>
-        <h1>Strong IT should make the business feel steadier.</h1>
+        <h1>Technology should open doors—not create headaches.</h1>
       </div>
-      <p class="page-hero-lead">[Company Name] helps organizations turn technology from a recurring source of uncertainty into a reliable, well-understood foundation.</p>
+      <p class="page-hero-lead">The Budget Geek helps businesses solve everyday technology problems and confidently explore what comes next.</p>
     </div>
   </section>
 
   <section class="belief-section">
     <div class="container belief-grid">
-      <p class="statement">We believe IT expertise is most valuable when it leads to better decisions—not more complexity.</p>
+      <p class="statement">We believe the best technology partner makes complicated things feel clear.</p>
       <div>
-        <p>That means listening before prescribing, designing for the environment you actually have, and documenting the work so knowledge stays with your organization.</p>
-        <p>Whether we are handling an urgent problem, planning a migration, or improving security, the goal is the same: make the next step clear and leave the technology stronger than we found it.</p>
+        <p>That starts with listening. Before suggesting a product or drawing a diagram, we want to understand how you work, what is frustrating you, and what a good result actually looks like.</p>
+        <p>Whether we are repairing a computer, redesigning a network, building an AI server, or launching a website, the goal is the same: solve the real problem and leave you with something useful.</p>
       </div>
     </div>
   </section>
@@ -38,7 +38,7 @@ const principles = [
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Our principles</p>
-        <h2>How we approach the work.</h2>
+        <h2>How we like to work.</h2>
       </div>
       <div class="principles-grid">
         {principles.map((principle, index) => (
@@ -56,23 +56,23 @@ const principles = [
     <div class="container process-grid">
       <div>
         <p class="eyebrow">A practical process</p>
-        <h2>Understand. Prioritize. Improve.</h2>
-        <p>We keep the process visible, so there is always a shared understanding of what is happening and what comes next.</p>
+        <h2>Listen. Plan. Build. Support.</h2>
+        <p>We keep the process visible, so you always know what is happening and what comes next.</p>
       </div>
       <ol>
-        <li><span>01</span><div><h3>Understand the environment</h3><p>We learn how your people work, where friction lives, and what the business needs technology to do.</p></div></li>
-        <li><span>02</span><div><h3>Prioritize the right work</h3><p>We separate urgent concerns from important improvements and build a sequence that makes sense.</p></div></li>
-        <li><span>03</span><div><h3>Implement with discipline</h3><p>Changes are planned, communicated, documented, and carried through with attention to continuity.</p></div></li>
-        <li><span>04</span><div><h3>Keep improving</h3><p>Technology and risk change. We revisit the plan and make steady, useful progress over time.</p></div></li>
+        <li><span>01</span><div><h3>Listen first</h3><p>We learn how your people work, where the friction is, and what you need technology to do.</p></div></li>
+        <li><span>02</span><div><h3>Make a practical plan</h3><p>We separate urgent issues from valuable improvements and build a sensible path forward.</p></div></li>
+        <li><span>03</span><div><h3>Build with care</h3><p>Changes are tested, communicated, documented, and delivered with attention to your daily operations.</p></div></li>
+        <li><span>04</span><div><h3>Stick around</h3><p>When the work is finished, we can provide the support and improvements that keep it useful.</p></div></li>
       </ol>
     </div>
   </section>
 
-  <CallToAction title="Looking for a straightforward IT partner?" />
+  <CallToAction title="Looking for a technology partner who speaks human?" />
 </BaseLayout>
 
 <style>
-  .about-hero { background: radial-gradient(circle at 82% 25%, rgba(103, 232, 210, 0.16), transparent 28%), var(--surface); }
+  .about-hero { background: radial-gradient(circle at 82% 25%, rgba(103, 232, 210, 0.18), transparent 28%), radial-gradient(circle at 10% 100%, rgba(18, 100, 227, 0.25), transparent 32%), var(--ink); }
   .belief-section { padding: 115px 0; }
   .belief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(50px, 10vw, 130px); }
   .statement { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.03em; }

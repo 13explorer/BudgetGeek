@@ -1,12 +1,11 @@
-# [Company Name] MSP Website
+# The Budget Geek Website
 
-A static Astro marketing site for an MSP / IT consulting company. Production uses a multi-stage Docker build: Node builds the static files, then `nginx:alpine` serves only the generated output.
+A static Astro marketing site for The Budget Geek, covering managed IT, networking, repairs, AI infrastructure, websites, and technology consulting. Production uses a multi-stage Docker build: Node builds the static files, then `nginx:alpine` serves only the generated output.
 
 ## Customize before publishing
 
 Replace every obvious placeholder in `src/`:
 
-- `[Company Name]`
 - `[Service Area]`
 - `[Business Hours]`
 - `hello@example.com`
